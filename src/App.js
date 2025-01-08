@@ -28,10 +28,6 @@ function App() {
       });
   };
 
-
-
-
-
   return (
     <center>
       <h1>Movie Poster App</h1>
