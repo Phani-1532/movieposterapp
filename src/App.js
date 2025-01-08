@@ -43,7 +43,7 @@ function App() {
         <img src={movie.Poster} class="card-img-top" alt={movie.Title} />
           <div class="card-body">
             <h3 className='card-title'>{movie.Title}</h3>
-            <a href={movie.Poster} className='btn btn-primary' onClick={() =>download(movie.Poster)}> Download Poster</a>
+            <a className='btn btn-primary' onClick={() =>download(movie.Poster)}> Download Poster</a>
           </div>
       </div>
       </div>
