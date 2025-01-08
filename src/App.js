@@ -12,7 +12,23 @@ function App() {
     fetch(`http://www.omdbapi.com/?s=${movies}&apikey=263d22d8`).then(response => response.json()).then(data => setData(data.Search))
   }
 
-  
+  const download = url => {
+    fetch(url).then(response => {
+        response.arrayBuffer().then(function(buffer) {
+          const url = window.URL.createObjectURL(new Blob([buffer]));
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute("download", "image.png");
+          document.body.appendChild(link);
+          link.click();
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+
 
 
 
