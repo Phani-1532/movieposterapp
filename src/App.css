@@ -1,38 +1,294 @@
-.App {
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Bebas+Neue&family=Carter+One&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle, #0d0d0d, #1a1a1a);
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Cinematic Heading */
+h1 {
+  font-size: 3rem;
+  margin-top: 20px;
+  text-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+  font-family: 'Carter One', cursive;
+}
+
+/* Search Container - Stylish & Futuristic */
+.search-container {
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(20px);
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  text-align: left;
+}
+
+.search-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px cyan;
+}
+
+/* Search Button */
+.search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px 18px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(90deg, cyan, blue);
+  color: white;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.5);
+}
+
+.search-btn:hover {
+  background: linear-gradient(90deg, blue, cyan);
+  box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Placeholder Section - Engaging */
+.placeholder {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0px 0px 15px cyan;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.placeholder span {
+  color: cyan;
+}
+
+/* Movie Grid - Compact & Responsive */
+.row {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+/* Movie Card - Modern & Optimized */
+.card {
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(25, 25, 25, 0.9));
+  border-radius: 12px;
+  box-shadow: 0px 3px 12px rgba(0, 255, 255, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1.5px solid rgba(0, 255, 255, 0.3);
+  text-align: center;
+  width: 260px;
+  margin: 5px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 255, 255, 0.4);
+  border-color: cyan;
+}
+
+/* Movie Poster */
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-bottom: 2px solid cyan;
+}
+
+/* Movie Card Content */
+.card-body {
+  padding: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Movie Title - Stylish & Readable */
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: 'Bebas Neue', cursive;
+  color: cyan;
+  margin-bottom: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Download Button - Visible & Styled */
+.btn-primary {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: transparent;
   color: white;
+  border: 2px solid cyan;
+  box-shadow: 0px 0px 8px cyan;
+  transition: all 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-primary:hover {
+  transform: scale(1.05);
+  background: rgba(0, 255, 255, 0.15);
+  color: cyan;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .row {
+    gap: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .card {
+    width: 90%;
+    max-width: 280px;
   }
+
+  .card img {
+    height: 320px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .search-container {
+    width: 90%;
+  }
+
+  .search-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .row {
+    gap: 10px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .card img {
+    height: 320px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  /* Adjusted Search Bar for Mobile */
+  .search-container {
+    width: 90%;
+  }
+
+  .search-input {
+    font-size: 1rem;
+    padding: 12px 15px;
+  }
+
+  .search-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Adjusted Placeholder Section for Mobile */
+  .placeholder {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+
+  .placeholder span {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    gap: 8px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .card img {
+    height: 300px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  /* Smaller Search Bar */
+  .search-container {
+    width: 95%;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+
+
+  .search-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  /* Further Reduce Placeholder Section */
+  .placeholder {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .placeholder span {
+    font-size: 1rem;
+  }
+
+  .search-container input::placeholder {
+    font-size: 0.63rem;
+  }
+
 }
